@@ -38,7 +38,7 @@
       "model": "Creta",
       "year": 2023,
       "pricePerDay": 4200,
-      "availability": true,
+      "availability": false,
       "transmission": "Automatic",
       "fuel": "Diesel",
       "seats": 5,
@@ -207,6 +207,19 @@
       "password": "123456"
     }
   ],
-  "bookings": [],
+  "bookings": [
+    {
+      "id": "1761719130175",
+      "userId": "1761588337566",
+      "user": "Gauri",
+      "carId": "3",
+      "carName": "Hyundai Creta",
+      "image": "https://images.turo.com/media/vehicle/images/ZsE68RnXQJyxXsh24q87rw.1242x745.jpg",
+      "startDate": "2025-10-29",
+      "endDate": "2025-10-31",
+      "duration": 2,
+      "totalCost": 8400
+    }
+  ],
   "session": []
 }
