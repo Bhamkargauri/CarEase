@@ -88,6 +88,7 @@ const Auth = () => {
             >
               {isLogin ? "Sign In" : "Register"}
             </h2>
+            
             <form onSubmit={isLogin ? handleLogin : handleRegister}>
               {!isLogin && (
                 <div className="mb-3">
@@ -145,6 +146,7 @@ const Auth = () => {
                 {isLogin ? "Sign In" : "Register"}
               </button>
             </form>
+
             <p className="mt-3 text-center">
               {isLogin ? (
                 <>
