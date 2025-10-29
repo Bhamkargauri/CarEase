@@ -22,7 +22,7 @@
       "model": "City",
       "year": 2022,
       "pricePerDay": 3800,
-      "availability": true,
+      "availability": false,
       "transmission": "Manual",
       "fuel": "Petrol",
       "seats": 5,
@@ -54,7 +54,7 @@
       "model": "Ertiga",
       "year": 2024,
       "pricePerDay": 4000,
-      "availability": true,
+      "availability": false,
       "transmission": "Manual",
       "fuel": "Petrol",
       "seats": 7,
@@ -134,7 +134,7 @@
       "model": "Magnite",
       "year": 2023,
       "pricePerDay": 3600,
-      "availability": true,
+      "availability": false,
       "transmission": "Automatic",
       "fuel": "Petrol",
       "seats": 5,
@@ -209,7 +209,19 @@
   ],
   "bookings": [
     {
-      "id": "1761719130175",
+      "id": "1761725723187",
+      "userId": "1761588337566",
+      "user": "Gauri",
+      "carId": "9",
+      "carName": "Nissan Magnite",
+      "image": "https://images.news18.com/ibnlive/uploads/2021/10/nissan-magnite-long-term-review-feature-16349059464x3.jpg",
+      "startDate": "2025-10-29",
+      "endDate": "2025-10-31",
+      "duration": 2,
+      "totalCost": 7200
+    },
+    {
+      "id": "1761725805919",
       "userId": "1761588337566",
       "user": "Gauri",
       "carId": "3",
@@ -219,7 +231,38 @@
       "endDate": "2025-10-31",
       "duration": 2,
       "totalCost": 8400
+    },
+    {
+      "id": "1761725877634",
+      "userId": "1761588337566",
+      "user": "Gauri",
+      "carId": "2",
+      "carName": "Honda City",
+      "image": "https://images.unsplash.com/photo-1594070319944-7c0cbebb6f58?ixlib=rb-4.1.0&auto=format&fit=crop&q=60&w=600",
+      "startDate": "2025-10-29",
+      "endDate": "2025-11-08",
+      "duration": 10,
+      "totalCost": 38000
+    },
+    {
+      "id": "1761725894753",
+      "userId": "1761588337566",
+      "user": "Gauri",
+      "carId": "4",
+      "carName": "Maruti Suzuki Ertiga",
+      "image": "https://images.pexels.com/photos/8766145/pexels-photo-8766145.jpeg",
+      "startDate": "2025-10-29",
+      "endDate": "2025-11-01",
+      "duration": 3,
+      "totalCost": 12000
     }
   ],
-  "session": []
+  "session": [
+    {
+      "id": "1761588337566",
+      "name": "Gauri",
+      "email": "g@gmail.com",
+      "password": "123456"
+    }
+  ]
 }

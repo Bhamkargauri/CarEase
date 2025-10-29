@@ -22,11 +22,13 @@ const AuthProvider = ({ children }) => {
 
   const login = async (userData) => {
     try {
+      // object
       // console.log("User Data = ", userData);
       const { data: existingSession } = await axios.get(
         "http://localhost:3001/session"
       );
 
+      // array of object
       // console.log("Existing Session = ", existingSession);
 
       if (existingSession.length > 0) {

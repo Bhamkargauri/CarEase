@@ -120,15 +120,15 @@ function CarDetails() {
         >
           <div className="row g-4 align-items-center">
             <div className="col-md-6">
-              <div class="row mb-4">
-                <div class="col-sm-6 mb-3 mb-sm-0">
+              <div className="row mb-4">
+                <div className="col-sm-6 mb-3 mb-sm-0">
                   <img
                     src={car.leftImage}
                     alt={`${car.make} ${car.model}`}
                     className="img-fluid equal-image"
                   />
                 </div>
-                <div class="col-sm-6">
+                <div className="col-sm-6">
                   <img
                     src={car.rightImage}
                     alt={`${car.make} ${car.model}`}
@@ -137,15 +137,15 @@ function CarDetails() {
                 </div>
               </div>
 
-              <div class="row mb-4">
-                <div class="col-sm-6 mb-3 mb-sm-0">
+              <div className="row mb-4">
+                <div className="col-sm-6 mb-3 mb-sm-0">
                   <img
                     src={car.image}
                     alt={`${car.make} ${car.model}`}
                     className="img-fluid equal-image"
                   />
                 </div>
-                <div class="col-sm-6">
+                <div className="col-sm-6">
                   <img
                     src={car.carBack}
                     alt={`${car.make} ${car.model}`}

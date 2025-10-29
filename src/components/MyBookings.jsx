@@ -28,7 +28,9 @@ const MyBookings = () => {
 
   useEffect(() => {
     const fetchBookings = async () => {
-      if (!currentUser) return;
+      if (!currentUser) {
+        return;
+      }
 
       try {
         const response = await axios.get(
@@ -55,8 +57,11 @@ const MyBookings = () => {
         const updatedCarData = { ...currentCarData, availability: true };
 
         await axios.put(`http://localhost:3001/cars/${carId}`, updatedCarData);
+
         await axios.delete(`http://localhost:3001/bookings/${bookingId}`);
+
         setBookedCar((prev) => prev.filter((b) => b.id !== bookingId));
+
         toast.success("Booking cancelled successfully!", { theme: "dark" });
       } catch (error) {
         console.error("Error cancelling booking:", error);
@@ -116,25 +121,24 @@ const MyBookings = () => {
                 style={{
                   background: "rgba(0,0,0,0.85)",
                   borderRadius: "15px",
-                  overflow: "hidden",
                 }}
               >
                 <div className="row g-0">
-                  <div className="col-md-5">
+                  <div className="col-md-6">
                     <img
                       src={b.image}
                       alt={b.carName}
                       className="img-fluid"
                       style={{
                         objectFit: "cover",
-                        height: "180px",
+                        height: "100%",
                         width: "100%",
                         borderRadius: "15px 0 0 15px",
                         boxShadow: "0 0 10px rgba(64,224,208,0.5)",
                       }}
                     />
                   </div>
-                  <div className="col-md-7">
+                  <div className="col-md-6">
                     <div className="card-body">
                       <h5 style={{ color: "#40E0D0" }}>{b.carName}</h5>
                       <p className="m-0 text-white">

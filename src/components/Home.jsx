@@ -98,7 +98,6 @@ const Home = () => {
                     }`}
                     style={{
                       opacity: !car.availability ? 0.6 : 1,
-                      pointerEvents: !car.availability ? "none" : "auto",
                     }}
                   >
                     {!car.availability ? "Already Booked" : "View Details"}
