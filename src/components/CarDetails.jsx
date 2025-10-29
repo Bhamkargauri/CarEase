@@ -125,26 +125,14 @@ function CarDetails() {
                   <img
                     src={car.leftImage}
                     alt={`${car.make} ${car.model}`}
-                    className="img-fluid rounded"
-                    style={{
-                      maxHeight: "400px",
-                      objectFit: "cover",
-                      borderRadius: "15px",
-                      boxShadow: "0 0 15px rgba(64,224,208,0.5)",
-                    }}
+                    className="img-fluid equal-image"
                   />
                 </div>
                 <div class="col-sm-6">
                   <img
                     src={car.rightImage}
                     alt={`${car.make} ${car.model}`}
-                    className="img-fluid rounded"
-                    style={{
-                      maxHeight: "400px",
-                      objectFit: "cover",
-                      borderRadius: "15px",
-                      boxShadow: "0 0 15px rgba(64,224,208,0.5)",
-                    }}
+                    className="img-fluid equal-image"
                   />
                 </div>
               </div>
@@ -154,26 +142,14 @@ function CarDetails() {
                   <img
                     src={car.image}
                     alt={`${car.make} ${car.model}`}
-                    className="img-fluid rounded"
-                    style={{
-                      maxHeight: "400px",
-                      objectFit: "cover",
-                      borderRadius: "15px",
-                      boxShadow: "0 0 15px rgba(64,224,208,0.5)",
-                    }}
+                    className="img-fluid equal-image"
                   />
                 </div>
                 <div class="col-sm-6">
                   <img
                     src={car.carBack}
                     alt={`${car.make} ${car.model}`}
-                    className="img-fluid rounded"
-                    style={{
-                      maxHeight: "400px",
-                      objectFit: "cover",
-                      borderRadius: "15px",
-                      boxShadow: "0 0 15px rgba(64,224,208,0.5)",
-                    }}
+                    className="img-fluid equal-image"
                   />
                 </div>
               </div>

@@ -14,7 +14,7 @@
       "leftImage": "https://imgd.aeplcdn.com/370x208/n/cw/ec/134287/city-exterior-right-rear-three-quarter.jpeg?isig=0&q=80",
       "rightImage": "https://imgd.aeplcdn.com/370x208/n/cw/ec/134287/city-exterior-right-front-three-quarter-78.jpeg?isig=0&q=80",
       "image": "https://images.unsplash.com/photo-1617469767053-d3b523a0b982?ixlib=rb-4.1.0&auto=format&fit=crop&q=60&w=600",
-      "carBack": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjbqL4g1ul857eKgFC_lcux8g5nhtyXZpr3w&s"
+      "carBack": "https://images.turo.com/media/vehicle/images/PShosFB_S9erZird0xGREg.1080x648.jpg"
     },
     {
       "id": "2",
@@ -22,7 +22,7 @@
       "model": "City",
       "year": 2022,
       "pricePerDay": 3800,
-      "availability": false,
+      "availability": true,
       "transmission": "Manual",
       "fuel": "Petrol",
       "seats": 5,
@@ -30,7 +30,7 @@
       "leftImage": "https://imgd.aeplcdn.com/370x208/n/cw/ec/134287/city-exterior-right-rear-three-quarter.jpeg?isig=0&q=80",
       "rightImage": "https://imgd.aeplcdn.com/370x208/n/cw/ec/134287/city-exterior-right-front-three-quarter-78.jpeg?isig=0&q=80",
       "image": "https://images.unsplash.com/photo-1594070319944-7c0cbebb6f58?ixlib=rb-4.1.0&auto=format&fit=crop&q=60&w=600",
-      "carBack": "https://i.ytimg.com/vi/yfsmpVPzirk/sddefault.jpg"
+      "carBack": "https://images.turo.com/media/vehicle/images/kwoKwuH-SSmfXxo_yGEP5Q.1242x745.jpg"
     },
     {
       "id": "3",
@@ -43,10 +43,10 @@
       "fuel": "Diesel",
       "seats": 5,
       "rating": 4.6,
-      "leftImage": "https://imgd.aeplcdn.com/370x208/n/cw/ec/134287/city-exterior-right-rear-three-quarter.jpeg?isig=0&q=80",
-      "rightImage": "https://imgd.aeplcdn.com/370x208/n/cw/ec/134287/city-exterior-right-front-three-quarter-78.jpeg?isig=0&q=80",
-      "image": "https://images.unsplash.com/photo-1649921777129-a28a26031a03?ixlib=rb-4.1.0&auto=format&fit=crop&q=60&w=600",
-      "carBack": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjbqL4g1ul857eKgFC_lcux8g5nhtyXZpr3w&s"
+      "leftImage": "https://images.turo.com/media/vehicle/images/_Ea15iYNR0G1deU43x5cFQ.1242x745.heic",
+      "rightImage": "https://images.turo.com/media/vehicle/images/dm_zZ0fZQeaewYKh_ab23g.1242x745.jpg",
+      "image": "https://images.turo.com/media/vehicle/images/ZsE68RnXQJyxXsh24q87rw.1242x745.jpg",
+      "carBack": "https://images.turo.com/media/vehicle/images/dqfNrCJpRg2c7fWTGOWjKg.1242x745.heic"
     },
     {
       "id": "4",
@@ -59,10 +59,10 @@
       "fuel": "Petrol",
       "seats": 7,
       "rating": 4.4,
-      "leftImage": "https://imgd.aeplcdn.com/370x208/n/cw/ec/134287/city-exterior-right-rear-three-quarter.jpeg?isig=0&q=80",
-      "rightImage": "https://imgd.aeplcdn.com/370x208/n/cw/ec/134287/city-exterior-right-front-three-quarter-78.jpeg?isig=0&q=80",
+      "leftImage": "https://zoomcar-assets.zoomcar.com/1282699/HostCarImage/mini_magick20251020-1-hroq3r28c7d4c7-047e-4569-b56e-d2af8f3ccc0b.jpeg",
+      "rightImage": "https://zoomcar-assets.zoomcar.com/1282716/HostCarImage/mini_magick20251020-1-1yfl09d29cc2b54-5546-4de9-a795-1ba81c409629.jpeg",
       "image": "https://images.pexels.com/photos/8766145/pexels-photo-8766145.jpeg",
-      "carBack": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjbqL4g1ul857eKgFC_lcux8g5nhtyXZpr3w&s"
+      "carBack": "https://zoomcar-assets.zoomcar.com/1282719/HostCarImage/mini_magick20251020-1-1eoygrw49e6a94e-14ff-460b-91fd-84b719a5e8f2.jpeg"
     },
     {
       "id": "5",
@@ -70,7 +70,7 @@
       "model": "Nexon",
       "year": 2023,
       "pricePerDay": 3900,
-      "availability": false,
+      "availability": true,
       "transmission": "Automatic",
       "fuel": "Petrol",
       "seats": 5,
@@ -91,10 +91,106 @@
       "fuel": "Diesel",
       "seats": 7,
       "rating": 4.7,
-      "leftImage": "https://imgd.aeplcdn.com/370x208/n/cw/ec/134287/city-exterior-right-rear-three-quarter.jpeg?isig=0&q=80",
-      "rightImage": "https://imgd.aeplcdn.com/370x208/n/cw/ec/134287/city-exterior-right-front-three-quarter-78.jpeg?isig=0&q=80",
+      "leftImage": "https://images.turo.com/media/vehicle/images/G9hhshPyR6ybmXrMaFIzug.1242x745.jpg",
+      "rightImage": "https://images.turo.com/media/vehicle/images/GOwl7AU_T1Wn_gAcVsQQzw.1242x745.jpg",
       "image": "https://images.pexels.com/photos/7290405/pexels-photo-7290405.jpeg",
-      "carBack": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjbqL4g1ul857eKgFC_lcux8g5nhtyXZpr3w&s"
+      "carBack": "https://images.turo.com/media/vehicle/images/EKSjl0tfTY2UT2PUK2D7tg.1242x745.jpg"
+    },
+    {
+      "id": "7",
+      "make": "Mahindra",
+      "model": "XUV300",
+      "year": 2022,
+      "pricePerDay": 3700,
+      "availability": true,
+      "transmission": "Manual",
+      "fuel": "Diesel",
+      "seats": 5,
+      "rating": 4.5,
+      "leftImage": "https://i.pinimg.com/736x/10/b8/f8/10b8f8003bf1a17dc7ff8438e11eccc1.jpg",
+      "rightImage": "https://zoomcar-assets.zoomcar.com/1066532/HostCarImage/mini_magick20250520-1-clwk2dd2bf7f04-3e1c-42b7-8b32-bebd47df365e.jpeg",
+      "image": "https://images.pexels.com/photos/29057945/pexels-photo-29057945.jpeg",
+      "carBack": "https://zoomcar-assets.zoomcar.com/1066559/HostCarImage/mini_magick20250520-1-1pij5zj727de6e0-d28b-4359-adaa-6ddb977a9600.jpeg"
+    },
+    {
+      "id": "8",
+      "make": "Renault",
+      "model": "Triber",
+      "year": 2023,
+      "pricePerDay": 3500,
+      "availability": true,
+      "transmission": "Manual",
+      "fuel": "Petrol",
+      "seats": 7,
+      "rating": 4.3,
+      "leftImage": "https://i.pinimg.com/736x/87/73/e0/8773e02f2c70ea893874168ba887d758.jpg",
+      "rightImage": "https://i.pinimg.com/1200x/17/a9/a6/17a9a6ffaa97a34c5af8ffd4d20aa497.jpg",
+      "image": "https://images.pexels.com/photos/32462522/pexels-photo-32462522.jpeg",
+      "carBack": "https://images.turo.com/media/vehicle/images/zXtS9TTRQlGD_Q6p9CUaOQ.1242x745.jpg"
+    },
+    {
+      "id": "9",
+      "make": "Nissan",
+      "model": "Magnite",
+      "year": 2023,
+      "pricePerDay": 3600,
+      "availability": true,
+      "transmission": "Automatic",
+      "fuel": "Petrol",
+      "seats": 5,
+      "rating": 4.4,
+      "leftImage": "https://imgd.aeplcdn.com/370x208/n/cw/ec/134287/city-exterior-right-rear-three-quarter.jpeg?isig=0&q=80",
+      "rightImage": "https://images.turo.com/media/vehicle/images/z7nGTmfiQvOSICAT_PtsrA.1242x745.jpg",
+      "image": "https://images.news18.com/ibnlive/uploads/2021/10/nissan-magnite-long-term-review-feature-16349059464x3.jpg",
+      "carBack": "https://images.turo.com/media/vehicle/images/OdNJvAztSjSdR1Y66lZoXA.1242x745.heic"
+    },
+    {
+      "id": "10",
+      "make": "Ford",
+      "model": "EcoSport",
+      "year": 2022,
+      "pricePerDay": 3800,
+      "availability": true,
+      "transmission": "Manual",
+      "fuel": "Diesel",
+      "seats": 5,
+      "rating": 4.5,
+      "leftImage": "https://images.turo.com/media/vehicle/images/I_-08bPDS5m5glFrjmXp2Q.1242x745.jpg",
+      "rightImage": "https://images.turo.com/media/vehicle/images/nGJylhBnSfegCRUr9UbOgQ.1242x745.jpg",
+      "image": "https://images.turo.com/media/vehicle/images/fkWUFPX9Q5SoIfEtUBN4Sw.1242x745.jpg",
+      "carBack": "https://images.turo.com/media/vehicle/images/F5zeijp9R3OkHdKtxZn-9g.1242x745.jpg"
+    },
+    {
+      "id": "11",
+      "make": "Maruti Suzuki",
+      "model": "Swift",
+      "year": 2023,
+      "pricePerDay": 3200,
+      "availability": true,
+      "transmission": "Manual",
+      "fuel": "Petrol",
+      "seats": 5,
+      "rating": 4.3,
+      "leftImage": "https://zoomcar-assets.zoomcar.com/1230124/HostCarImage/mini_magick20250910-1-110l77x50a08794-fb50-4dec-a502-a78e72cf94aa.jpeg",
+      "rightImage": "https://zoomcar-assets.zoomcar.com/1230127/HostCarImage/mini_magick20250910-1-bejp6n0a4f8b1f-518a-4e58-bfda-c916fd58815f.jpeg",
+      "image": "https://zoomcar-assets.zoomcar.com/1230121/HostCarImage/mini_magick20250910-1-1fieqe18d30f6eb-9678-4053-936c-6e7975670cc7.jpeg",
+      "carBack": "https://zoomcar-assets.zoomcar.com/1230125/HostCarImage/mini_magick20250910-1-h6dcv670a94e97-df82-4c22-baca-c4220698e8a1.jpeg"
+    },
+    {
+      "id": "12",
+      "make": "Hyundai",
+      "model": "Venue",
+      "year": 2024,
+      "pricePerDay": 4000,
+      "availability": true,
+      "transmission": "Automatic",
+      "fuel": "Diesel",
+      "seats": 5,
+      "rating": 4.6,
+      "leftImage": "https://images.turo.com/media/vehicle/images/dFBrizMwR-C2mg7I5vULMg.1242x745.jpg",
+      "rightImage": "https://images.turo.com/media/vehicle/images/3uF8NO_ASu6qQyHa8tucZQ.1242x745.jpg",
+      "image": "https://images.turo.com/media/vehicle/images/MYeISs22S_Ss1JL0L5UPwg.1242x745.jpg",
+      "carBack": "https://images.turo.com/media/vehicle/images/oevkdUU_TVKW4TeoDg_c5Q.1242x745.jpg"
     }
   ],
   "users": [
@@ -111,31 +207,6 @@
       "password": "123456"
     }
   ],
-  "bookings": [
-    {
-      "id": "1761641064352",
-      "userId": "1761588337566",
-      "user": "Gauri",
-      "carId": "5",
-      "carName": "Tata Nexon",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSN3NbS2P5tBna3EQtSeyphRyxMZLJsruQveQ&s",
-      "startDate": "2025-10-28",
-      "endDate": "2025-10-31",
-      "duration": 3,
-      "totalCost": 11700
-    },
-    {
-      "id": "1761641128502",
-      "userId": "1761577201015",
-      "user": "Shraddha",
-      "carId": "2",
-      "carName": "Honda City",
-      "image": "https://images.unsplash.com/photo-1594070319944-7c0cbebb6f58?ixlib=rb-4.1.0&auto=format&fit=crop&q=60&w=600",
-      "startDate": "2025-10-28",
-      "endDate": "2025-10-31",
-      "duration": 3,
-      "totalCost": 11400
-    }
-  ],
+  "bookings": [],
   "session": []
 }
