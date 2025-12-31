@@ -3,6 +3,7 @@ import { useContext, useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router";
 import { toast } from "react-toastify";
 import { AuthContext } from "./AuthContext";
+import CarDetailsExtras from "./CarDetailsExtras";
 
 function CarDetails() {
   const { user } = useContext(AuthContext);
@@ -13,6 +14,14 @@ function CarDetails() {
   ); // format yyyy-mm-dd
   const [checkOut, setCheckOut] = useState("");
   const [totalDays, setTotalDays] = useState(0);
+
+  const [showModal, setShowModal] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const handleImageClick = (index) => {
+    setActiveIndex(index);
+    setShowModal(true);
+  };
 
   const { id } = useParams();
   // console.log("carID =", id);
@@ -108,6 +117,8 @@ function CarDetails() {
     }
   };
 
+  const images = [car.leftImage, car.rightImage, car.image, car.carBack];
+
   return (
     <div className="min-vh-100 py-5 bg-dark">
       <div className="container position-relative">
@@ -126,6 +137,8 @@ function CarDetails() {
                     src={car.leftImage}
                     alt={`${car.make} ${car.model}`}
                     className="img-fluid equal-image"
+                    onClick={() => handleImageClick(0)}
+                    style={{ cursor: "pointer" }}
                   />
                 </div>
                 <div className="col-sm-6">
@@ -133,6 +146,8 @@ function CarDetails() {
                     src={car.rightImage}
                     alt={`${car.make} ${car.model}`}
                     className="img-fluid equal-image"
+                    onClick={() => handleImageClick(1)}
+                    style={{ cursor: "pointer" }}
                   />
                 </div>
               </div>
@@ -143,6 +158,8 @@ function CarDetails() {
                     src={car.image}
                     alt={`${car.make} ${car.model}`}
                     className="img-fluid equal-image"
+                    onClick={() => handleImageClick(2)}
+                    style={{ cursor: "pointer" }}
                   />
                 </div>
                 <div className="col-sm-6">
@@ -150,6 +167,8 @@ function CarDetails() {
                     src={car.carBack}
                     alt={`${car.make} ${car.model}`}
                     className="img-fluid equal-image"
+                    onClick={() => handleImageClick(3)}
+                    style={{ cursor: "pointer" }}
                   />
                 </div>
               </div>
@@ -176,9 +195,25 @@ function CarDetails() {
               <p className="text-white">
                 <strong>Seats:</strong> {car.seats}
               </p>
-              <p className="text-white">
+
+              {/* Stars */}
+              <div className="position-relative d-inline-block fs-5 mb-1">
+                <div className="text-secondary">★★★★★</div>
+                <div
+                  className="position-absolute top-0 start-0 overflow-hidden text-success"
+                  style={{ width: `${(car.rating / 5) * 100}%` }}
+                >
+                  ★★★★
+                </div>
+              </div>
+              {/* Rating badge */}
+              <div className="px-2 py-1 rounded text-white fs-6 fw-bold badge bg-success me-4 ms-2">
+                {car.rating} | Very Good
+              </div>
+
+              {/* <p className="text-white">
                 <strong>Rating:</strong> {car.rating}
-              </p>
+              </p> */}
 
               {!car.availability ? (
                 <span className="badge bg-danger">Booked</span>
@@ -208,6 +243,73 @@ function CarDetails() {
             </div>
           </div>
         </div>
+
+        {/* image Modal */}
+        {showModal && (
+          <div className="modal fade show d-block" tabIndex="-1">
+            <div className="modal-dialog modal-lg modal-dialog-centered">
+              <div
+                className="modal-content"
+                style={{
+                  background: "rgba(40, 200, 200, 0.32)",
+                  borderRadius: "20px",
+                }}
+              >
+                <div className="modal-header">
+                  <button
+                    className="btn-close btn-close-white"
+                    onClick={() => setShowModal(false)}
+                  ></button>
+                </div>
+
+                <div className="modal-body">
+                  <div
+                    id="carCarousel"
+                    className="carousel slide"
+                    data-bs-ride="carousel"
+                  >
+                    <div className="carousel-inner">
+                      {images.map((img, index) => (
+                        <div
+                          key={index}
+                          className={`carousel-item ${
+                            index === activeIndex ? "active" : ""
+                          }`}
+                        >
+                          <img
+                            src={img}
+                            className="d-block mx-auto"
+                            style={{
+                              height: "400px",
+                              width: "100%",
+                              objectFit: "cover",
+                            }}
+                          />
+                        </div>
+                      ))}
+                    </div>
+                    <button
+                      className="carousel-control-prev"
+                      type="button"
+                      data-bs-target="#carCarousel"
+                      data-bs-slide="prev"
+                    >
+                      <span className="carousel-control-prev-icon" />
+                    </button>
+                    <button
+                      className="carousel-control-next"
+                      type="button"
+                      data-bs-target="#carCarousel"
+                      data-bs-slide="next"
+                    >
+                      <span className="carousel-control-next-icon" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
 
         {/* Booking Modal */}
         <div
@@ -304,6 +406,8 @@ function CarDetails() {
           </div>
         </div>
       </div>
+
+      <CarDetailsExtras car={CarDetails} />
     </div>
   );
 }
