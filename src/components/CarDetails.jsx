@@ -1,7 +1,7 @@
-import axios from "axios";
 import { useContext, useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router";
 import { toast } from "react-toastify";
+import Api from "../api";
 import { AuthContext } from "./AuthContext";
 import CarDetailsExtras from "./CarDetailsExtras";
 
@@ -10,7 +10,7 @@ function CarDetails() {
   const [car, setCar] = useState(null);
   const [userName, setUserName] = useState("");
   const [checkIn, setCheckIn] = useState(
-    new Date().toISOString().split("T")[0]
+    new Date().toISOString().split("T")[0],
   ); // format yyyy-mm-dd
   const [checkOut, setCheckOut] = useState("");
   const [totalDays, setTotalDays] = useState(0);
@@ -31,7 +31,7 @@ function CarDetails() {
   useEffect(() => {
     const fetchCar = async () => {
       try {
-        const response = await axios.get(`http://localhost:3001/cars/${id}`);
+        const response = await Api.get(`/cars/${id}`);
         // console.log("response = ", response);
         setCar(response.data);
       } catch (error) {
@@ -68,6 +68,8 @@ function CarDetails() {
   }
 
   const handleBooking = async () => {
+    console.log("USER OBJECT =", user);
+    console.log("USER ID =", user?.id);
     if (!user) {
       toast.warn("Please login to book a car", { theme: "dark" });
       navigate("/login");
@@ -85,10 +87,10 @@ function CarDetails() {
     }
 
     const booking = {
-      id: Date.now().toString(),
-      userId: user.id,
-      user: userName,
-      carId: car.id,
+      // id: Date.now().toString(),
+      // userId: user.id,
+      // user: userName,
+      // carId: car.id,
       carName: `${car.make} ${car.model}`,
       image: car.image,
       startDate: checkIn,
@@ -103,9 +105,12 @@ function CarDetails() {
         availability: false,
       };
 
-      await axios.put(`http://localhost:3001/cars/${car.id}`, updatedCarData);
+      await Api.put(`/cars/${car.id}`, updatedCarData);
 
-      await axios.post("http://localhost:3001/bookings", booking);
+      await Api.post(
+        `/bookings?userId=${user.user.id}&carId=${car.id}`,
+        booking,
+      );
 
       setCar(updatedCarData);
 
@@ -117,7 +122,7 @@ function CarDetails() {
     }
   };
 
-  const images = [car.leftImage, car.rightImage, car.image, car.carBack];
+  const images = [car.leftImage, car.rightImage, car.image, car.backImage];
 
   return (
     <div className="min-vh-100 py-5 bg-dark">
@@ -164,7 +169,7 @@ function CarDetails() {
                 </div>
                 <div className="col-sm-6">
                   <img
-                    src={car.carBack}
+                    src={car.backImage}
                     alt={`${car.make} ${car.model}`}
                     className="img-fluid equal-image"
                     onClick={() => handleImageClick(3)}

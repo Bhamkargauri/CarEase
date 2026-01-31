@@ -1,41 +1,41 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router";
 import { toast } from "react-toastify";
+import Api from "../api";
+import { AuthContext } from "./AuthContext";
 
 const MyBookings = () => {
   const [bookedCar, setBookedCar] = useState([]);
-  const [currentUser, setCurrentUser] = useState(null);
+  // const [currentUser, setCurrentUser] = useState(null);
+  const { user } = useContext(AuthContext);
 
-  useEffect(() => {
-    const fetchSession = async () => {
-      try {
-        const { data: session } = await axios.get(
-          "http://localhost:3001/session"
-        );
+  // useEffect(() => {
+  //   const fetchSession = async () => {
+  //     try {
+  //       const { data: session } = await Api.get("/session");
 
-        if (session.length > 0) {
-          setCurrentUser(session[0]);
-        } else {
-          toast.info("Please log in first!", { theme: "dark" });
-        }
-      } catch (error) {
-        console.error("Error fetching session:", error);
-      }
-    };
-    fetchSession();
-  }, []);
+  //       if (session.length > 0) {
+  //         setCurrentUser(session[0]);
+  //       } else {
+  //         toast.info("Please log in first!", { theme: "dark" });
+  //       }
+  //     } catch (error) {
+  //       console.error("Error fetching session:", error);
+  //     }
+  //   };
+  //   fetchSession();
+  // }, []);
 
   useEffect(() => {
     const fetchBookings = async () => {
-      if (!currentUser) {
+      console.log("AUTH USER =", user);
+      console.log("FETCHING BOOKINGS FOR USER ID =", user?.user?.id);
+      if (!user) {
         return;
       }
 
       try {
-        const response = await axios.get(
-          `http://localhost:3001/bookings?userId=${currentUser.id}`
-        );
+        const response = await Api.get(`/bookings/user/${user.user.id}`);
         // console.log("response=", response);
         setBookedCar(response.data);
       } catch (error) {
@@ -43,22 +43,23 @@ const MyBookings = () => {
         toast.error("Failed to load bookings.", { theme: "dark" });
       }
     };
-    fetchBookings();
-  }, [currentUser]);
+
+    if (user?.user?.id) {
+      fetchBookings();
+    }
+  }, [user]);
 
   const handleCancel = async (bookingId, carId) => {
     if (window.confirm("Are you sure to cancel booking?")) {
       try {
-        const carResponse = await axios.get(
-          `http://localhost:3001/cars/${carId}`
-        );
+        const carResponse = await Api.get(`/cars/${carId}`);
         const currentCarData = carResponse.data;
 
-        const updatedCarData = { ...currentCarData, availability: true };
+        // const updatedCarData = { ...currentCarData, availability: true };
 
-        await axios.put(`http://localhost:3001/cars/${carId}`, updatedCarData);
+        // await Api.put(`/cars/${carId}`, updatedCarData);
 
-        await axios.delete(`http://localhost:3001/bookings/${bookingId}`);
+        await Api.put(`/bookings/cancel/${bookingId}`);
 
         setBookedCar((prev) => prev.filter((b) => b.id !== bookingId));
 
@@ -115,7 +116,8 @@ const MyBookings = () => {
 
         <div className="row">
           {bookedCar.map((b) => (
-            <div className="col-md-6 mb-4" key={b.carId}>
+            //b.id=>carId
+            <div className="col-md-6 mb-4" key={b.id}>
               <div
                 className="card shadow-lg border-0"
                 style={{
@@ -126,8 +128,8 @@ const MyBookings = () => {
                 <div className="row g-0">
                   <div className="col-md-6">
                     <img
-                      src={b.image}
-                      alt={b.carName}
+                      src={b.car.image}
+                      alt={`${b.car.make} ${b.car.model}`}
                       className="img-fluid"
                       style={{
                         objectFit: "cover",
@@ -140,9 +142,11 @@ const MyBookings = () => {
                   </div>
                   <div className="col-md-6">
                     <div className="card-body">
-                      <h5 style={{ color: "#40E0D0" }}>{b.carName}</h5>
+                      <h5 style={{ color: "#40E0D0" }}>
+                        {b.car.make} {b.car.model}
+                      </h5>
                       <p className="m-0 text-white">
-                        <strong>User:</strong> {b.user}
+                        <strong>User:</strong> {b.user?.name}
                       </p>
                       <p className="m-0 text-white">
                         <strong>Check-In:</strong> {b.startDate}
@@ -159,7 +163,7 @@ const MyBookings = () => {
 
                       <button
                         className="btn btn-sm btn-danger mt-2"
-                        onClick={() => handleCancel(b.id, b.carId)}
+                        onClick={() => handleCancel(b.id, b.car.id)}
                       >
                         Cancel Booking
                       </button>

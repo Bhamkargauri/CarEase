@@ -1,7 +1,7 @@
-import axios from "axios";
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router";
 import { toast } from "react-toastify";
+import Api from "../api";
 import loginImg from "../assets/form1.jpg";
 import { AuthContext } from "./AuthContext";
 
@@ -17,14 +17,14 @@ const Auth = () => {
     e.preventDefault();
 
     try {
-      const { data: users } = await axios.get("http://localhost:3001/users");
+      const { data: users } = await Api.get("/users/getuser");
       const existingUser = users.find((u) => u.email === email);
       if (existingUser) {
         toast.error("Email already registered!", { theme: "dark" });
         return;
       }
-      const newUser = { id: Date.now(), name, email, password };
-      await axios.post("http://localhost:3001/users", newUser);
+      const newUser = { name, email, password };
+      await Api.post("/users/register", newUser);
       toast.success("Registered successfully!", { theme: "dark" });
       setIsLogin(true);
     } catch (error) {
@@ -35,25 +35,33 @@ const Auth = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
+
     try {
-      const { data: users } = await axios.get("http://localhost:3001/users");
+      // 1. get all users
+      const { data: users } = await Api.get("/users/getuser");
+
       const user = users.find(
-        (u) => u.email === email && u.password === password
+        (u) => u.email === email && u.password === password,
       );
+
       if (!user) {
         toast.error("Invalid email or password", { theme: "dark" });
         return;
       }
-      const { data: currentSession } = await axios.get(
-        "http://localhost:3001/session"
-      );
+
+      // 2. get existing session
+      const { data: currentSession } = await Api.get("/users/getsession");
+
       if (currentSession.length > 0) {
-        await axios.delete(
-          `http://localhost:3001/session/${currentSession[0].id}`
-        );
+        await Api.post(`/users/logout/${currentSession[0].id}`);
       }
-      await axios.post("http://localhost:3001/session", user);
-      login(user);
+
+      // 3. LOGIN → session create + response lo
+      const { data: session } = await Api.post("/users/login", user);
+
+      // 🔥 THIS IS THE KEY
+      login(session);
+
       toast.success(`Welcome, ${user.name}!`, { theme: "dark" });
       navigate("/");
     } catch (error) {
@@ -88,7 +96,7 @@ const Auth = () => {
             >
               {isLogin ? "Sign In" : "Register"}
             </h2>
-            
+
             <form onSubmit={isLogin ? handleLogin : handleRegister}>
               {!isLogin && (
                 <div className="mb-3">

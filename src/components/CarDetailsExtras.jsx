@@ -5,7 +5,6 @@ const CarDetailsExtras = ({ car }) => {
         className="p-5 m-5 rounded-4"
         style={{ background: "#090808ff", color: "#fff" }}
       >
-    
         {/*  inclusion/exclusion section */}
         <h5 className="fw-bold mb-3">Inclusion/Exclusions</h5>
         <div className="d-flex align-items-start mb-3">

@@ -1,6 +1,6 @@
-import axios from "axios";
 import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router";
+import Api from "../api";
 import { AuthContext } from "./AuthContext";
 
 const Home = () => {
@@ -13,7 +13,7 @@ const Home = () => {
 
   const fetchCars = async () => {
     try {
-      const response = await axios.get("http://localhost:3001/cars");
+      const response = await Api.get("/cars");
       setCars(response.data);
     } catch (error) {
       console.error("Error fetching cars:", error);
