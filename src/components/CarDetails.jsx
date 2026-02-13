@@ -122,6 +122,45 @@ function CarDetails() {
     }
   };
 
+  const handlePayment = async () => {
+    if (!user) {
+      toast.warn("Please login to book a car", { theme: "dark" });
+      navigate("/login");
+      return;
+    }
+
+    // Order create
+    const orderRes = await fetch(
+      "http://localhost:8080/api/payment/create-order",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ amount: 1500 }),
+      },
+    );
+
+    const order = await orderRes.json();
+
+    // 2️⃣ Razorpay open
+    const options = {
+      key: "rzp_test_SBKYCQyV4fyyEY",
+      amount: order.amount,
+      currency: "INR",
+      name: "Car Ease",
+      description: "Car Booking Payment",
+      order_id: order.id,
+
+      handler: async function () {
+        await handleBooking();
+
+        // alert("Payment successful & Booking confirmed");
+      },
+    };
+
+    const razorpay = new window.Razorpay(options);
+    razorpay.open();
+  };
+
   const images = [car.leftImage, car.rightImage, car.image, car.backImage];
 
   return (
@@ -402,7 +441,8 @@ function CarDetails() {
                   className="btn"
                   style={{ backgroundColor: "#40E0D0", color: "black" }}
                   data-bs-dismiss="modal"
-                  onClick={handleBooking}
+                  // onClick={handleBooking}
+                  onClick={handlePayment}
                 >
                   Confirm Booking
                 </button>
